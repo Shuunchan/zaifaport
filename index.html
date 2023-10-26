@@ -272,14 +272,14 @@
                 </div>
               </div>
               <div class="col-md-6">
-                <div class="info-box mt-4">
+                <div class="info-box mt-4 h-100">
                   <i class="bx bx-envelope"></i>
                   <h3>Email Me</h3>
                   <p>algimaulanahudzaifahalghifari@gmail.com</p>
                 </div>
               </div>
               <div class="col-md-6">
-                <div class="info-box mt-4">
+                <div class="info-box mt-4 h-100">
                   <i class="bx bx-location-plus"></i>
                   <h3>Addres</h3>
                   <p>Perum Permata Tangerang Blok CB 8 no. 10, Kuta Jaya, Kec. Ps. Kemis, Kabupaten Tangerang, Banten 15562</p>
@@ -303,22 +303,14 @@
                 <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" required>
               </div>
               <div class="form-group mt-3">
-                <textarea class="form-control" name="message" rows="6" placeholder="Message" required></textarea>
+                <textarea class="form-control" name="message" id="message" rows="6" placeholder="Message" required></textarea>
               </div>
-              <div class="my-3">
-                <div class="loading">Loading</div>
-                <div class="error-message"></div>
-                <div class="sent-message">Your message has been sent. Thank you!</div>
-              </div>
-              <div class="text-center"><button type="submit">Send Message</button></div>
+              <div class="text-center"><button type="submit" id="sendMsg">Send Message</button></div>
             </form>
           </div>
-
-          <div class="row w-100">
-            <div class="col-lg-12 my-4">
-              <div class="info-box mt-4 centered"> <!-- Tambahkan class "centered" di sini -->
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d247.92309957023716!2d106.57547328909482!3d-6.161604783853279!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69fff671e61bf1%3A0x9cc8eb7945281a13!2sPola%20Baju%20Sewing%20Pattern!5e0!3m2!1sid!2sid!4v1697773841151!5m2!1sid!2sid" width="100%" height="600" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-              </div>
+          <div class="col-lg-12 my-4">
+            <div class="info-box mt-4 centered"> <!-- Tambahkan class "centered" di sini -->
+              <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d247.92309957023716!2d106.57547328909482!3d-6.161604783853279!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69fff671e61bf1%3A0x9cc8eb7945281a13!2sPola%20Baju%20Sewing%20Pattern!5e0!3m2!1sid!2sid!4v1697773841151!5m2!1sid!2sid" width="100%" height="600" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
             </div>
           </div>
         </div>
@@ -363,6 +355,34 @@
 
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
+  <script>
+			document.getElementById("sendMsg").addEventListener("click", function(event) {
+			 			event.preventDefault(); 
+			
+			 			sendEmail();
+			});
+			function sendEmail() {
+			 			var name = document.getElementById("name").value;
+			 			var email = document.getElementById("email").value;
+			 			var subject = document.getElementById("subject").value;
+			 			var message = document.getElementById("message").value;
+			
+				if(name == '' || email == '' || subject == '' || message == '') {
+					alert('Please fill out all required forms!');
+				} else {
+					var mailtoLink = "mailto:algimaulanahudzaifahalghifaro@gmail.com" + 
+			                  			"?subject=" + encodeURIComponent(subject) + 
+			                  			"&body=" + encodeURIComponent(
+																"Name: " + name +  
+																"\nEmail: " + email + 
+																"\n\n" + message);
+					
+					window.location.href = mailtoLink;
+				}
+			 			return false;
+			}
+		
+  </script>
 
 </body>
 
