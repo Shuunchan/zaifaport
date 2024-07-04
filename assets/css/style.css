@@ -518,6 +518,13 @@ section {
 /*--------------------------------------------------------------
 # About Me
 --------------------------------------------------------------*/
+.about .image {
+  background: url("../img/profil5.png") center center no-repeat;
+  background-size: auto;
+  min-height: 600px;
+  width: 100%;
+}
+
 .about .content h3 {
   font-weight: 700;
   font-size: 26px;
@@ -555,48 +562,49 @@ section {
   color: #e6e8eb;
 }
 
-.about .image {
-  background: url("../img/profil4.png") center center no-repeat;
-  background-size: auto;
-  min-height: 600px;
-}
-
-.about .skills-content {
+.section-title {
   margin-top: 30px;
+  font-weight: bold;
+  font-size: 20px;
 }
 
-.about .skills-content .progress {
+.skills-content {
+  margin-top: 20px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 20px;
+  padding-left: 1rem;
+}
+
+.progress {
   height: 60px;
-  display: block;
+  display: flex;
+  align-items: center;
   background: none;
   border-radius: 0;
+  padding: 0 10px;
 }
 
-.about .skills-content .progress .skill {
+.skill {
   padding: 10px 0;
-  margin: 0 0 6px 0;
   text-transform: uppercase;
-  display: block;
+  display: flex;
+  align-items: center;
   font-weight: 700;
   font-family: "Raleway", sans-serif;
-  color: #fff;
+  color: #ffffff;
 }
 
-.about .skills-content .progress .skill .val {
-  float: right;
-  font-style: normal;
+.skill i {
+  font-size: 2rem;
+  margin-right: 10px;
 }
 
-.about .skills-content .progress-bar-wrap {
-  background: #e6e8eb;
+.mt-5 {
+  margin-top: 3rem;
 }
 
-.about .skills-content .progress-bar {
-  width: 1px;
-  height: 10px;
-  transition: 0.9s;
-  background-color: #00ADB5;
-}
+
 
 /*--------------------------------------------------------------
 # My Resume
