@@ -604,17 +604,6 @@ section {
   margin-top: 3rem;
 }
 
-
-/* <CHANGE> Responsive design untuk mobile */
-@media (max-width: 991px) {
-  .about .image {
-    min-height: 400px;
-    margin-bottom: 30px;
-  }
-}
-
-
-
 /*--------------------------------------------------------------
 # My Resume
 --------------------------------------------------------------*/
