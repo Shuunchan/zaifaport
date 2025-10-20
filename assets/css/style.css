@@ -518,28 +518,11 @@ section {
 /*--------------------------------------------------------------
 # About Me
 --------------------------------------------------------------*/
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-body {
-  font-family: "Raleway", sans-serif;
-  background-color: #f5f5f5;
-}
-
-.about {
-  background-color: #ffffff;
-}
-
 .about .image {
   background: url("../img/profile1.png.png") center center no-repeat;
-  background-size: cover;
+  background-size: auto;
   min-height: 600px;
   width: 100%;
-  border-radius: 8px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
 }
 
 .about .content h3 {
@@ -620,6 +603,7 @@ body {
 .mt-5 {
   margin-top: 3rem;
 }
+
 
 /* <CHANGE> Responsive design untuk mobile */
 @media (max-width: 991px) {
